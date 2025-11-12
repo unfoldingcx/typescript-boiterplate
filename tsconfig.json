@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": [
+      "node",
+      "bun"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@types": [
+        "./src/types/index.ts"
+      ],
+      "@utils/*": [
+        "./src/utils/*.utils.ts"
+      ],
+      "@labs/*": [
+        "./src/labs/*.labs.ts"
+      ],
+      "@tests/*": [
+        "./tests/*.test.ts"
+      ]
+    },
+    "noEmit": true
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "index.ts"
+  ],
+  "exclude": [
+    "dist",
+    "temp",
+    "scripts",
+    "bin",
+    "docs",
+    "node_modules",
+    ".cursor",
+    ".prettierrc-plugins",
+    ".prettierrc",
+    ".prettierignore",
+    ".git",
+    ".vscode",
+    ".idea"
+  ]
+}

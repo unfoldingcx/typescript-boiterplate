@@ -1,0 +1,61 @@
+# ---------------------------------------------------
+# PRE-COMMIT HOOK
+# ---------------------------------------------------
+# Runs before each commit to ensure code quality
+# All jobs run in parallel for faster execution
+# ---------------------------------------------------
+pre-commit:
+  exclude:
+    - "node_modules"
+    - "dist"
+    - "temp"
+    - ".cursor"
+    - ".prettierrc-plugins"
+    - ".prettierrc"
+    - ".prettierignore"
+    - ".git"
+    - ".vscode"
+    - ".idea"
+  parallel: false
+  commands:
+    format:
+      glob: "*.{ts}"
+      run: bun run prettier --write {staged_files} && git add {staged_files}
+    lint:
+      glob: "*.{ts}"
+      run: bun run eslint {staged_files} --fix --quiet && git add {staged_files}
+
+# ---------------------------------------------------
+# PRE-PUSH HOOK
+# ---------------------------------------------------
+# Runs before pushing to remote
+# Ensures security and build integrity
+# ---------------------------------------------------
+pre-push:
+  parallel: false
+  commands:
+    audit:
+      run: bun run audit
+
+    typecheck:
+      run: bun run tsc --noEmit
+
+# ---------------------------------------------------
+# COMMIT-MSG HOOK (Optional)
+# ---------------------------------------------------
+# Uncomment to enforce conventional commit messages
+# Format: type(scope): message
+# Examples: feat(auth): add login, fix(ui): button color
+# ---------------------------------------------------
+commit-msg:
+  commands:
+    conventional-commit:
+      run: |
+        COMMIT_MSG=$(cat $1)
+        PATTERN="^(wip|feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,50}"
+        if ! echo "$COMMIT_MSG" | grep -qE "$PATTERN"; then
+          echo "❌ Invalid commit message format!"
+          echo "   Use: type(scope): message"
+          echo "   Example: feat(auth): add login screen"
+          exit 1
+        fi

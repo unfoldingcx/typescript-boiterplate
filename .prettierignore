@@ -1,0 +1,9 @@
+node_modules
+modules
+coverage
+dist
+temp-uploads
+.yarn
+.prettierrc-plugins
+.prettierrc
+.prettierignore
