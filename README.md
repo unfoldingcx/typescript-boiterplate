@@ -17,10 +17,6 @@
 
 A production-ready TypeScript boilerplate optimized for building **scripts, CLIs, automation tools, and backend services**. Built on [Bun](https://bun.sh) for blazing-fast performance and modern developer experience.
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
-[![Bun](https://img.shields.io/badge/Bun-1.3+-black.svg)](https://bun.sh)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ---
 
 ## ✨ Features
