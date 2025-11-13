@@ -1,4 +1,19 @@
-# TypeScript Boilerplate with Bun 🚀
+<h1 align="center"><img src="https://www.unfolding.cx/images/branding/main-rounded.png" width="150" height="150"></h1>
+
+<div align="center">
+  <p>
+    <strong>TypeScript Boiterplate</strong><br/>
+    <sub><a href="https://www.unfolding.cx/" target="_blank">広げる THE FUTURE</a></sub>
+  </p>
+</div>
+
+<div align="center">
+
+[![npm version](https://img.shields.io/npm/v/@unfoldingcx/appstoreconnect-api.svg)](https://www.npmjs.com/package/appstoreconnect-api)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+
+</div>
 
 A production-ready TypeScript boilerplate optimized for building **scripts, CLIs, automation tools, and backend services**. Built on [Bun](https://bun.sh) for blazing-fast performance and modern developer experience.
 
